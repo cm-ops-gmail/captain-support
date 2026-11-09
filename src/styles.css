@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 10 Minute School unified design: light surfaces, border-based elevation,
+   green primary actions, red brand accents, Anek Bangla + Inter. */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-status-open: var(--status-open);
+  --color-status-review: var(--status-review);
+  --color-status-waiting: var(--status-waiting);
+  --color-status-resolved: var(--status-resolved);
+  --color-status-closed: var(--status-closed);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-surface: var(--surface);
+  --font-sans: "Inter", "Anek Bangla", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", "Anek Bangla", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --shadow-card: 0 1px 2px rgba(17, 24, 39, 0.04), 0 1px 3px rgba(17, 24, 39, 0.06);
+  --shadow-panel: 0 4px 14px rgba(232, 0, 29, 0.08);
+  --shadow-glow: 0 0 0 3px rgba(232, 0, 29, 0.12);
+  --background-image-gradient-brand: linear-gradient(135deg, #931212 0%, #721111 55%, #1a0005 100%);
+  --background-image-gradient-soft: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --brand: #e8001d;
+  --brand-foreground: #ffffff;
+  --status-open: #274fe3;
+  --status-review: #b45309;
+  --status-waiting: #ea580c;
+  --status-resolved: #0e7b4f;
+  --status-closed: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #1cab55;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1f2937;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
+  --destructive: #e8001d;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #d1d5db;
+  --ring: #e8001d;
+  --chart-1: #e8001d;
+  --chart-2: #1cab55;
+  --chart-3: #ea580c;
+  --chart-4: #274fe3;
+  --chart-5: #a51e35;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #1cab55;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff5f6;
+  --sidebar-accent-foreground: #e8001d;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #e8001d;
+}
+
+.dark {
+  --background: #0b1117;
+  --foreground: #f9fafb;
+  --surface: #111827;
+  --card: #111827;
+  --card-foreground: #f9fafb;
+  --secondary: #1f2937;
+  --secondary-foreground: #f3f4f6;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
+  --accent: #1f2937;
+  --accent-foreground: #f9fafb;
+  --border: #374151;
+  --input: #4b5563;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.2px;
+    line-height: 1.35;
+  }
+
+  /* Bengali glyphs use Anek Bangla; Latin text remains Inter. */
+  :lang(bn) {
+    font-family: "Anek Bangla", "Noto Sans Bengali", sans-serif;
+    line-height: 1.5;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(232, 0, 29, 0.18);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 999px;
+  }
+}
+
+@utility card-panel {
+  position: relative;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  transition:
+    border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@utility card-panel-hover {
+  &:hover {
+    box-shadow: var(--shadow-panel);
+    border-color: var(--color-brand);
+    transform: translateY(-1px);
+  }
+}
+
+@utility glow-ring {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility sheet-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
